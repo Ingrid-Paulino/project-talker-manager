@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const req1 = require('./middlewares/req1_getAllTalkers');
 
 const app = express();
 app.use(bodyParser.json());
@@ -13,5 +14,7 @@ app.get('/', (_request, response) => {
 });
 
 app.listen(PORT, () => {
-  console.log('Online');
+  console.log('Rodando na porta 3000');
 });
+
+app.get('/talker', req1);
