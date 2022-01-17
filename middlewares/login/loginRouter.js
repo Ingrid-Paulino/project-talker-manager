@@ -1,7 +1,9 @@
 const router = require('express').Router({ mergeParams: true });
 
-const validPassword = require('./validPassword');
-const validEmail = require('./validEmail');
-const req3 = require('../req3_login');
+const { password1 } = require('./validPassword');
+const { email1, email2 } = require('./validEmail');
+const { req3 } = require('../req3_login');
 
-router.post('/', validEmail, validPassword, req3);
+router.post('/', email1, email2, password1, req3);
+
+module.exports = router;
