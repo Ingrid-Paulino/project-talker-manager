@@ -24,7 +24,7 @@ app.get('/talker/:id', req2);
 app.use('/login', routerLogin);
 app.use('/talker', routerTalke);
 app.use('/talker/:id', routerEditTalke);
-app.delete('talker/:id', validToken, deleteTalker);
+app.delete('/talker/:id', validToken, deleteTalker);
 
 app.listen(PORT, () => {
   console.log('Rodando na porta 3000');

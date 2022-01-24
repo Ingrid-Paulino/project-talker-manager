@@ -12,7 +12,9 @@ async function deleteTalker(req, res) {
 
   console.log(talkerJson);
   console.log(talkerJson[editIndex]);
+  delete talkerJson[editIndex];
 
+  await fs.writeFile('./talker.json', JSON.stringify(talkerJson));
   return res.status(204).end();
 }
 
