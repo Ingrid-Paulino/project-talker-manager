@@ -1,7 +1,7 @@
 function validRate(req, res, next) {
-  const { talk: { rate } } = req.body;
-  
-  if (!rate) {
+  const { talk } = req.body;
+  const { rate } = talk;
+  if (rate === undefined) {
     return res.status(400).json({
         message: 'O campo "talk" é obrigatório e "watchedAt" e "rate" não podem ser vazios' });
   }

@@ -7,6 +7,7 @@ const createTalker = async (req, res) => {
     .then((response) => JSON.parse(response));
 
   const obj = { id: talkerJson.length + 1, name, age, talk: { watchedAt, rate } };
+  
   talkerJson.push(obj);
 
   await fs.writeFile('./talker.json', JSON.stringify(talkerJson));
