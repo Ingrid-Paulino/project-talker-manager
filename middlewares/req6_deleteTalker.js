@@ -10,8 +10,8 @@ async function deleteTalker(req, res) {
 
   const editIndex = talkerJson.findIndex((del) => del.id === +id);
 
-  console.log(talkerJson);
-  console.log(talkerJson[editIndex]);
+  // console.log(talkerJson);
+  // console.log(talkerJson[editIndex]);
   delete talkerJson[editIndex];
 
   await fs.writeFile('./talker.json', JSON.stringify(talkerJson));

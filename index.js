@@ -7,6 +7,7 @@ const routerTalke = require('./middlewares/createTalker/talkerRouter');
 const routerEditTalke = require('./middlewares/editTalker/talkRouteredit');
 const { validToken } = require('./middlewares/createTalker/tokenTalke');
 const deleteTalker = require('./middlewares/req6_deleteTalker');
+const searchTalker = require('./middlewares/req7_search');
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,6 +20,7 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
+app.get('/talker/search', validToken, searchTalker);
 app.get('/talker', req1);
 app.get('/talker/:id', req2);
 app.use('/login', routerLogin);
